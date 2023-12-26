@@ -3,18 +3,25 @@
   "version": "0.0.1",
   "description": "",
   "type": "module",
-  "main": "./dist/index.cjs",
+  "main": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
   "exports": {
-    ".": "./dist/index.cjs"
+    ".": "./dist/index.mjs"
   },
-
+  "bin": {
+    "fighterjet": "./dist/bin.mjs"
+  },
   "scripts": {
     "build": "unbuild"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@types/node": "^20.10.5",
     "unbuild": "^2.0.0"
+  },
+  "dependencies": {
+    "citty": "^0.1.5",
+    "consola": "^3.2.3"
   }
 }
