@@ -3,6 +3,7 @@
 import { defineCommand, runMain } from "citty";
 
 import { runInit, handleInitArgs, InitArgs } from "../init";
+import { runServe, handleServeArgs } from "../serve";
 
 const initCommand = defineCommand({
     args: {
@@ -17,6 +18,13 @@ const initCommand = defineCommand({
     run({ args }){
         runInit(handleInitArgs(args as Partial<InitArgs>));
     }
+});
+
+const serveCommand = defineCommand({
+    args: {},
+    run({ args }){
+        runServe(handleServeArgs());
+    }
 })
 
 const main = defineCommand({
@@ -24,7 +32,8 @@ const main = defineCommand({
         name: "FighterJet"
     },
     subCommands: {
-        init: initCommand
+        init: initCommand,
+        serve: serveCommand
     }
 });
 
